@@ -8,7 +8,7 @@ export default function ErrorPage() {
   return (
     <main className="error-page" id="error-page">
       <div className="error-page__content">
-        <div className="error-page__portal">🌀</div>
+        <div className="error-page__portal"></div>
         <h1 className="error-page__code">404</h1>
         <h2 className="error-page__title">Dimensión no encontrada</h2>
         <p className="error-page__message">
