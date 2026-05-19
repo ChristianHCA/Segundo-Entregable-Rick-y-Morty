@@ -2,7 +2,7 @@
 
 Aplicación web SPA desarrollada con **React** que consume la [API pública de Rick and Morty](https://rickandmortyapi.com) para visualizar y explorar personajes de la serie.
 
-## 📋 Descripción
+##  Descripción
 
 Esta aplicación permite:
 - **Ver todos los personajes** con paginación
@@ -11,7 +11,7 @@ Esta aplicación permite:
 - **Ver detalles individuales** de cada personaje
 - Navegación fluida mediante **React Router DOM**
 
-## 🚀 Instrucciones de Ejecución
+## Instrucciones de Ejecución
 
 ### Prerrequisitos
 - [Node.js](https://nodejs.org/) (v18 o superior)
@@ -37,7 +37,7 @@ npm run dev
 
 4. Abrir en el navegador la URL que aparece en la terminal (por defecto `http://localhost:5173`)
 
-## 🛠️ Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
 | Tecnología | Versión | Uso |
 |---|---|---|
@@ -47,7 +47,7 @@ npm run dev
 | CSS3 | — | Estilos personalizados |
 | JavaScript ES6+ | — | Lógica de la aplicación |
 
-## 📁 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```
 src/
@@ -69,7 +69,7 @@ src/
 └── index.css              # Sistema de diseño global
 ```
 
-## 🎯 Funcionalidades
+## Funcionalidades
 
 | # | Funcionalidad | Estado |
 |---|---|---|
@@ -83,12 +83,12 @@ src/
 | Extra | Detalle individual | ✅ |
 | Extra | Página de error 404 | ✅ |
 
-## 🌐 API Utilizada
+##  API Utilizada
 
 - **Base URL**: `https://rickandmortyapi.com/api`
 - **Endpoint de personajes**: `/character`
 - **Documentación**: [rickandmortyapi.com/documentation](https://rickandmortyapi.com/documentation)
 
-## 👤 Autor
+##  Autor
 
-Estudiante — Segundo Entregable, Mayo 2026
+Christian Chavarro — Segundo Entregable, Mayo 2026
