@@ -1,0 +1,231 @@
+/* ===== DESIGN SYSTEM - Rick and Morty Explorer ===== */
+
+/* CSS Custom Properties */
+:root {
+  /* Colors */
+  --color-bg-primary: #0a0a1a;
+  --color-bg-secondary: #111128;
+  --color-bg-card: #1a1a3e;
+  --color-bg-card-hover: #222255;
+  --color-bg-navbar: rgba(10, 10, 26, 0.85);
+  --color-bg-glass: rgba(26, 26, 62, 0.6);
+
+  --color-portal-green: #00ff88;
+  --color-portal-cyan: #00d4ff;
+  --color-portal-purple: #8b5cf6;
+  --color-portal-pink: #ec4899;
+
+  --color-text-primary: #e8e8f0;
+  --color-text-secondary: #a0a0c0;
+  --color-text-muted: #6b6b8d;
+
+  --color-status-alive: #00ff88;
+  --color-status-dead: #ff4757;
+  --color-status-unknown: #ffa502;
+
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-hover: rgba(0, 255, 136, 0.3);
+
+  /* Gradients */
+  --gradient-portal: linear-gradient(135deg, #00ff88, #00d4ff);
+  --gradient-portal-subtle: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 212, 255, 0.1));
+  --gradient-card: linear-gradient(145deg, #1a1a3e, #151535);
+  --gradient-hero: linear-gradient(180deg, #0a0a1a 0%, #111128 50%, #0a0a1a 100%);
+
+  /* Shadows */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 8px 40px rgba(0, 255, 136, 0.15);
+  --shadow-glow: 0 0 20px rgba(0, 255, 136, 0.3);
+  --shadow-navbar: 0 2px 20px rgba(0, 0, 0, 0.5);
+
+  /* Typography */
+  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Creepster', cursive;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Layout */
+  --navbar-height: 70px;
+  --max-width: 1280px;
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Background animated particles */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(0, 255, 136, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+/* Utility Classes */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-portal-green);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 255, 136, 0.4);
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes portalSwirl {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.05); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* Status Badge Colors */
+.status-alive {
+  color: var(--color-status-alive);
+}
+
+.status-dead {
+  color: var(--color-status-dead);
+}
+
+.status-unknown {
+  color: var(--color-status-unknown);
+}
