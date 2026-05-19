@@ -1,4 +1,4 @@
-# 🌀 Rick and Morty Explorer
+#  Rick and Morty Explorer
 
 Aplicación web SPA desarrollada con **React** que consume la [API pública de Rick and Morty](https://rickandmortyapi.com) para visualizar y explorar personajes de la serie.
 
